@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Alpine hides x-cloak elements by removing the attribute once it has booted,
+ * but it can only do that if something was hiding them in the first place.
+ * Without this rule every x-show="false" branch is briefly visible on load -
+ * you would see "Spin the wheel" and "Spinning..." at the same time.
+ */
+[x-cloak] {
+    display: none !important;
+}
